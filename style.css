@@ -5,10 +5,10 @@ html, body{
 }
 
 body{
-    background-color: #CBCBCB;
+    background-attachment: #cbcbcb;
     margin: 0;
     font-size: 14px;
-    color: #2E373A;
+    color: #2e373a;
     font-family: "Libre Baskerville", sans-serif;
 }
 
@@ -70,7 +70,7 @@ header img{
     height: 130%;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0px;
+    bottom: 0;
 }
 
 .grid figure img{
@@ -138,7 +138,7 @@ header img{
 }
 
 .grid-3 div{
-    grid-column: 2/ 6;
+    grid-column: 2 / 6;
     text-wrap: nowrap;
 }
 
@@ -147,15 +147,15 @@ header img{
 }
 
 .grid-3 div:nth-child(5){
-    grid-column: 1/ 6;
+    grid-column: 1 / 6;
 }
 
 .grid-3 div:nth-child(4){
-    grid-column: 1/ 7;
+    grid-column: 1 / 7;
 }
 
 footer{
-    border-top: 1px solid #2E373A55;
+    border-top: 1px solid #2e373a55;
     min-height: 100vh;
 }
 
@@ -167,7 +167,7 @@ footer .content{
 
 .grid-5{
     --row: 5;
-    font-size:1.7em;
+    font-size: 1.7em;
 }
 
 .grid-5 div:nth-child(1){
@@ -193,14 +193,36 @@ footer .content{
 @media screen and (max-width: 1023px){
     header img{
         height: 2em;
+        height: unset;
+        width: 100%;
     }
 
     .banner .content h1{
         font-size: 12em;
+        font-size: 7em;
+    }
+
+    .banner{
+        overflow: hidden;
+    }
+
+    .banner .content{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .banner .content .right{
         transform: none;
+    }
+
+    .grid{
+        display: block;
+    }
+
+    .grid-1 h2:nth-child(3){
+        font-size: 3em;
     }
 
     .grid-2 div:nth-child(1){
@@ -218,40 +240,6 @@ footer .content{
     .grid-3{
         font-size: 5em;
         line-height: 1em;
-    }
-}
-
-@media screen and (max-width: 1023px){
-    header img{
-        height: unset;
-        width: 100%;
-    }
-    
-    .banner .content h1{
-        font-size: 7em;
-    }
-
-    .banner .content{
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .banner{
-        overflow: hidden;
-    }
-
-    .grid-1 h2:nth-child(3){
-        font-size: 3em;
-    }
-
-    .grid{
-        display: block;
-    }
-
-    .grid-3{
-        font-size: 4em;
         display: block;
         margin-bottom: 100px;
     }
@@ -275,7 +263,6 @@ footer .content{
 .autoShow{
     animation: autoShowAnimation both;
     animation-timeline: view(70% 5%);
-
 }
 
 @keyframes autoShowAnimation{
@@ -283,19 +270,19 @@ footer .content{
         opacity: 0;
         transform: translateY(200px) scale(0.3);
     }
-    
+
     to{
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
-.autoBLur{
-    animation: autoBLurAnimation linear both;
+.autoBlur{
+    animation: autoBlurAnimation linear both;
     animation-timeline: view();
 }
 
-@keyframes autoBLurAnimation{
+@keyframes autoBlurAnimation{
     0%{
         filter: blur(40px);
     }
@@ -303,7 +290,7 @@ footer .content{
     45%, 55%{
         filter: blur(0px);
     }
-    
+
     100%{
         filter: blur(40px);
     }
